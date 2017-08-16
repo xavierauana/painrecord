@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreRecordRequest;
 use App\Record;
 use Illuminate\Http\Request;
 
-class RecordController extends Controller
+class RecordsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -31,12 +32,7 @@ class RecordController extends Controller
      * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request) {
-        $this->validate($request, [
-            'type'      => 'required',
-            'longitude' => 'required',
-            'latitude'  => 'required',
-        ]);
+    public function store(StoreRecordRequest $request) {
 
         $newRecord = Record::create([
             'type'      => $request->get('type'),
@@ -44,7 +40,7 @@ class RecordController extends Controller
             'latitude'  => $request->get('latitude'),
         ]);
 
-        return response()->json($newRecord;
+        return response()->json($newRecord);
 
     }
 
