@@ -16,3 +16,4 @@ Route::get('/', function () {
 });
 
 Route::post('/records', "RecordsController@store");
+Route::get('/records', "RecordsController@index");
