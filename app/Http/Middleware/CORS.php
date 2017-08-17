@@ -18,7 +18,7 @@ class CORS
         $headers = [
             'Access-Control-Allow-Origin' => '*',
             'Access-Control-Allow-Methods'=> 'POST, GET, OPTIONS, PUT, DELETE',
-            'Access-Control-Allow-Headers'=> 'Content-Type, X-Auth-Token, Origin, Authorization'
+            'Access-Control-Allow-Headers'=> 'Content-Type, X-Auth-Token, X-TOKEN, Origin, Authorization'
         ];
 
         if($request->getMethod() == "OPTIONS") {
