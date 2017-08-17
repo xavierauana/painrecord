@@ -13,11 +13,11 @@ class RecordsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index() {
-        if($this->header("X-TOKEN") == 'dQhF0E3Nkk7TwulcElxdZqarpkSitybYvEmkDuZkAPTriykaJfaDbYPZ9A0WeXC1'){
+    public function index(Request $request) {
+        if($request->header("X-TOKEN") == 'dQhF0E3Nkk7TwulcElxdZqarpkSitybYvEmkDuZkAPTriykaJfaDbYPZ9A0WeXC1'){
             $records = Record::all();
 
-            return response()->json($records);w
+            return response()->json($records);
         }
 
         return response("Invalid", 403);

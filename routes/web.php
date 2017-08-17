@@ -15,5 +15,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('/records', "RecordsController@store");
 Route::get('/records', "RecordsController@index");
+Route::post('/records', "RecordsController@store");
