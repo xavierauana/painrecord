@@ -21,15 +21,6 @@ class CORS
             'Access-Control-Allow-Headers'=> 'Content-Type, X-Auth-Token, X-TOKEN, Origin, Authorization'
         ];
 
-        if($request->getMethod() == "OPTIONS") {
-
-            $response = new Response();
-            foreach($headers as $key => $value)
-                $response->header->set($key, $value);
-
-            return $response;
-        }
-
         $response = $next($request);
 
         foreach($headers as $key => $value)

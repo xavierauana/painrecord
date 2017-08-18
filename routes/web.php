@@ -15,5 +15,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/records', "RecordsController@index");
+Route::get('/records', "RecordsController@index")->middleware('cors');
 Route::post('/records', "RecordsController@store");
